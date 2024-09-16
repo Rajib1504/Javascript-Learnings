@@ -35,8 +35,8 @@ function getLaptop(laptop,search){
             if(product.name.toLowerCase().includes(search.toLowerCase())){
                   lapStore.push(product);
             }
-            return(product);
       }
+      return(lapStore);
 
 }
 const findLaptop = getLaptop(products,"laptop");
