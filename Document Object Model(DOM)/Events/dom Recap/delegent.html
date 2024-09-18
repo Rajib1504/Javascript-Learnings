@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>delegent</title>
+      <head></head>
+
+<body>
+      <h1>event delegent</h1>
+      <section id="section">
+        <ul id="list-ul" class="listContainer">
+          <li class="item">Lorem, ipsum.</li>
+          <li class="item">Eius, ducimus?</li>
+          <li class="item">Ipsum, sapiente.</li>
+          <li class="item">Officia, quos!</li>
+          <li class="item">Iusto, et!</li>
+          <li class="item">Quas, nisi.</li>
+        </ul>
+        <button id="btn-add">Add Item</button>
+      </section>
+</body>
+<script>
+
+     const items = document.getElementsByClassName("item");
+
+//      const items = document.getElementsByClassName("listContainer");//when you add some new element if you want to do the same action with them then you need to target the parent
+     for(const item of items){
+      // item.addEventListener("click",function(){
+      //       console.log(item);
+      // })one is this way.
+      item.addEventListener("click",function(event){
+            // console.log(event.target);
+            console.log(event.target.parentNode);// we can find parentNode
+            console.log(event.target.parentNode.removeChild(event.target));// we can find parentNode and do the removechild 
+      })
+     }
+//      new element creator by a butoon :and tring to delete it .
+
+     document.getElementById('btn-add').addEventListener("click",function(){
+      const listul = document.getElementById("list-ul");
+      const li = document.createElement('li');
+li.innerText = "Brand new list item"
+li.classList =('item');
+listul.appendChild(li);
+     })
+
+
+</script>
+</html>

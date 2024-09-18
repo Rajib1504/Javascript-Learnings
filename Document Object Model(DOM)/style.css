@@ -1,0 +1,11 @@
+h1{
+      color: rgba(212, 142, 153, 0.658);
+}
+.bg-blue{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.largeText {
+      font-size: xx-large;
+}

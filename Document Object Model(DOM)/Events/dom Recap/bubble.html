@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event bubble</title>
+  </head>
+  <body>
+    <h1>Exploring Event bubble</h1>
+    <section id="section">
+      <ul id="list-ul">
+        <li id="item-1">Lorem, ipsum.</li>
+        <li id="item-2">Eius, ducimus?</li>
+        <li id="item-3">Ipsum, sapiente.</li>
+        <li id="item-4">Officia, quos!</li>
+        <li id="item-5">Iusto, et!</li>
+        <li id="item-6">Quas, nisi.</li>
+      </ul>
+    </section>
+    <mark
+      >note: the thing is in bubble element is if you are in your room so you
+      also exixt in your house also exist in your locality etc ,same if you
+      click in a browser its checking that where you clicked are you in your
+      room or where if ther some work the it will do the one step up home mean
+      parent element if there will be some work it will do in this way its going
+      up till to the top.<b
+        >if you want to stop it so the the way is - event.stopPropagation()</b
+      ></mark
+    >
+  </body>
+  <script>
+    // event bubble
+    //     stopPropagation();
+    //     stopImmediatePropagation()
+
+    document
+      .getElementById("item-2")
+      .addEventListener("click", function (event) {
+        console.log("It-2 clicked");
+        event.stopPropagation(); // propagation stop.
+      }); //we can see its only giving the item 2 vlue becase we have decleard the stop propagation.
+    document
+      .getElementById("item-3")
+      .addEventListener("click", function (event) {
+        console.log("It-3 clicked");
+        event.stopPropagation(); // propagation stop.
+      }); //we can see its only giving the item 2 vlue becase we have decleard the stop propagation.
+    document
+      .getElementById("item-4")
+      .addEventListener("click", function (event) {
+        console.log("It-4 clicked");
+        event.stopPropagation(); // propagation stop.
+      }); //we can see its only giving the item 2 vlue becase we have decleard the stop propagation.
+    document
+      .getElementById("item-5")
+      .addEventListener("click", function (event) {
+        console.log("It-5 clicked");
+        event.stopImmediatePropagation(); //stopImmediatePropagation stop.
+      }); //we can see its only giving the item 2 vlue becase we have decleard the stop propagation.
+
+    document
+      .getElementById("list-ul")
+      .addEventListener("click", function (event) {
+        console.log("ul-clicked");
+      });
+    document
+      .getElementById("section")
+      .addEventListener("click", function (event) {
+        console.log("section-clicked");
+      });
+  </script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>more Events</title>
+  </head>
+  <body>
+    <!-- keyup -->
+    <!-- key down -->
+    <!-- key press -->
+    <!-- mouse hover -->
+    <!-- mouse click -->
+    <!-- target (need to know) -->
+    <!-- event  -->
+    <!-- event.target  -->
+
+    <!-- disible: -->
+    <!-- the question is you need to delete the title by giving the delete command in input andt the give one click to the button.  -->
+    <h1 id="title">Delete me by botton</h1>
+    <input type="text" placeholder="type delete here" id="inputtype" />
+    <button id="clickhere" disabled>click me</button>
+
+    <hr />
+    <h2 id="del">Lorem, ipsum dolor.</h2>
+    <input type="text" placeholder="type id here" id="input" />
+    <button id="submit" disabled>click me</button>
+  </body>
+
+  <script>
+    const inputtype = document
+      .getElementById("inputtype")
+      .addEventListener("keyup", function (event) {
+        const text = event.target.value; // till here we get the vlaue that we are writing in the input filed
+        const disabledbtn = document.getElementById("clickhere"); //declere the desabled btn becasue need to remove the desabled
+        if (text === "delete") {
+          disabledbtn.removeAttribute("disabled"); // disabled has default valeu disabled-true
+        } else {
+          disabledbtn.setAttribute("disabled", true);
+        }
+        disabledbtn.addEventListener("click", function (event) {
+          const title = document.getElementById("title");
+          title.innerText = "";
+        });
+      });
+    //......................................................
+    const input = document
+      .getElementById("input")
+      .addEventListener("keyup", function (event) {
+        const text = event.target.value;
+        console.log(text);
+        const disablebtn = document.getElementById("submit");
+        if (text === "delete") {
+          disablebtn.removeAttribute("disabled");
+        } else {
+          disablebtn.setAttribute("disabled", true);
+        }
+        disablebtn.addEventListener("click", function (event) {
+          const title = document.getElementById("del");
+          title.innerText = "";
+        });
+      });
+  </script>
+</html>
